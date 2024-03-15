@@ -28,3 +28,9 @@ var puestoDeTrabajo;
 console.log(typeof puestoDeTrabajo);
 puestoDeTrabajo = "Desarrollador Web";
 console.log("Mi puesto de trabajo es " + puestoDeTrabajo);
+
+// formas de escribir nombres de variables y funciones
+
+// Camel Case: calcularDescuento -> primera palabra en minusculas, las siguientes palabras en mayusculas
+// Snake Case: calcular_descuento -> todas las palabras en minusculas y separadas por guion bajo
+// Pascal Case: CalcularDescuento -> todas las palabras en mayusculas y sin separacion
