@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practica DOM</title>
+</head>
+<body>
+  <h1>Practica DOM</h1>
+  <div id="parrafo_padre">
+    <p id="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+    <p id="parrafo2" class="parrafo_nuevo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+  </div>
+
+  <form id="form1" >
+    <input type="text" id="input_text">
+    <input type="submit" value="Enviar">
+  </form>
+  <button id="boton">Cambiar texto</button>
+  <script src="practica_1.js"></script>
+</body>
+<script>
+
+  // manipulacion de DOM - Document Object Model
+  // Documentacion de DOM: https://www.w3schools.com/js/js_htmldom.asp
+
+  // getElementById devuelve un solo elemento buscando por ID
+  // innerHTML es una propiedad que permite modificar el contenido de un elemento
+
+  var parrafo = document.getElementById('parrafo');
+  parrafo.innerHTML = "Hola mundo desde el script de HTML";
+
+  // getElementsByClassName devuelve un array de elementos buscando por clase
+  var parrafo2 = document.getElementsByClassName('parrafo_nuevo');
+  console.log(parrafo2);
+
+  // querySelector devuelve un solo elemento buscando por clase o por id, se usa . para clase y # para id
+  var parrafo2_2 = document.querySelector('.parrafo_nuevo');
+  console.log(parrafo2_2);
+
+  // documet.createElement crea un nuevo elemento
+  let new_div = document.createElement('div');
+  new_div.innerHTML = 'Soy un nuevo div';
+  let father = document.getElementById('parrafo_padre');
+  // document.appendChild agrega un elemento al final de otro
+  father.appendChild(new_div);
+
+  // father.style.display = 'none';
+</script>
+</html>
