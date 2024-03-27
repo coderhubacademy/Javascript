@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+</head>
+<body>
+  <h1>Bienvenidos a la segunda clase del DOM</h1>
+  <a href="https://www.w3schools.com/jsref/default.asp">Documentación del DOM</a><br>
+  <a href="https://developer.mozilla.org/es/docs/Web/API/Document_Object_Model">Documentación del DOM Mozilla</a>
+  <div id="list">
+    <ul>
+      <li><a href="https://www.google.com">Google</a></li>
+      <li><a href="https://www.youtube.com">Youtube</a></li>
+      <li><a href="https://www.facebook.com">Facebook</a></li>
+    </ul>
+  </div>
+  <form action="" onSubmit="return false">
+    <input type="text" id="input_text">
+    <input type="submit" value="Enviar" onclick="printSomething()">
+  </form>
+  <div id="new_text">
+
+  </div>
+</body>
+<script>
+let url = document.URL;
+console.log(url);
+
+// links -> Devuelve un array con todos los links de la página
+// forms -> Devuelve un array con todos los formularios de la página
+// images -> Devuelve un array con todas las imágenes de la página
+// scripts -> Devuelve un array con todos los scripts de la página
+// La manera de usarlos es document.links, document.forms, document.images, document.scripts
+
+function printSomething() {
+  let input = document.getElementById('input_text').value;
+  console.log(input);
+  let new_text = document.getElementById('new_text');
+  new_text.innerHTML = input;
+}
+</script>
+</html>

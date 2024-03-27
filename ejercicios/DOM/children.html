@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practica con metodo Children</title>
+</head>
+<body>
+  <h1> Elemento 1 </h1>
+  <h2> Elemento 2 </h2>
+
+  <p> Las etiquetas del body son: </p>
+  <p id="contenedor"></p>
+</body>
+<script>
+  const etiquetas = document.body.children;
+  let contenedor = document.getElementById('contenedor');
+  let texto = '';
+  for (let i = 0; i < etiquetas.length; i++) {
+    texto += etiquetas[i].tagName + '<br>';
+  }
+  console.log(texto);
+  contenedor.innerHTML = texto;
+</script>
+</html>
