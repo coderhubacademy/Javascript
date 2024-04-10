@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake API</title>
+</head>
+<body>
+  <h1>Usuarios Fake API</h1>
+  <ul id="articles-list">
+
+  </ul>
+</body>
+<script>
+  // fetch es una funcion que recibe un parametro que es la URL de la API
+  // fetch devuelve una promesa
+  // then es un metodo que recibe una funcion como parametro
+  // then se ejecuta cuando la promesa se resuelve
+  // catch es un metodo que recibe una funcion como parametro
+  // catch se ejecuta cuando la promesa no se resuelve
+  fetch('https://newsapi.org/v2/everything?q=keyword&apiKey=63bf21765a6648cba20f12d29f763f99')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      console.log("Articles", data.articles);
+      let articles = data.articles;
+      console.log("1", articles[0].title);
+      let ul = document.getElementById('articles-list');
+
+      for (let i = 0; i < articles.length; i++) {
+        let li = document.createElement('li');
+        li.innerHTML = articles[i].title;
+        ul.appendChild(li);
+      }
+    })
+    .catch(error => console.log(error));
+</script>
+</html>

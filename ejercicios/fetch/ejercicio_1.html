@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chuck Norris API</title>
+</head>
+<body>
+  <h1 id="phrase-title"></h1>
+</body>
+<script>
+  // fetch es una funcion que recibe un parametro que es la URL de la API
+  // fetch devuelve una promesa
+  // then es un metodo que recibe una funcion como parametro
+  // then se ejecuta cuando la promesa se resuelve
+  // catch es un metodo que recibe una funcion como parametro
+  // catch se ejecuta cuando la promesa no se resuelve
+  fetch('https://api.chucknorris.io/jokes/random')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data.value);
+      let phraseTitle = document.getElementById('phrase-title');
+      phraseTitle.innerHTML = data.value;
+    })
+    .catch(error => console.log(error));
+</script>
+</html>
